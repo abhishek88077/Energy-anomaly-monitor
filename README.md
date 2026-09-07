@@ -43,7 +43,7 @@ pip install -r requirements.txt
 
 ## Deploy to Render
 
-This repository pins Python-compatible dependency versions and creates a project virtual environment during the Render build. Build and start use the same interpreter, preventing binary mismatches between NumPy and Python.
+This repository deploys with a Docker image pinned to Python 3.11. Build and start use the same interpreter and filesystem, preventing binary mismatches between NumPy and Python.
 
 1. Push the project to GitHub.
 2. In Render, choose **New +** -> **Blueprint**.
