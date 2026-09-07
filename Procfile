@@ -1,1 +1,1 @@
-web: PYTHONPATH=.render_packages python3 app.py
+web: .venv/bin/python -m gunicorn --bind 0.0.0.0:$PORT --workers 1 --threads 4 --timeout 180 app:app

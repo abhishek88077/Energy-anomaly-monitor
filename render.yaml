@@ -2,7 +2,10 @@ services:
   - type: web
     name: energy-anomaly-monitor
     runtime: python
-    buildCommand: python3 -m pip install --target .render_packages -r requirements.txt
-    startCommand: PYTHONPATH=.render_packages python3 app.py
+    buildCommand: python3 -m venv .venv && .venv/bin/python -m pip install --upgrade pip && .venv/bin/python -m pip install -r requirements.txt
+    startCommand: .venv/bin/python -m gunicorn --bind 0.0.0.0:$PORT --workers 1 --threads 4 --timeout 180 app:app
     healthCheckPath: /api/health
     autoDeploy: true
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9

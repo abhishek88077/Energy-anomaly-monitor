@@ -43,7 +43,7 @@ pip install -r requirements.txt
 
 ## Deploy to Render
 
-This repository includes `render.yaml` and a Render start command that uses a project-local dependency directory. This avoids runtime PATH differences between Render's build and deploy phases.
+This repository pins Python-compatible dependency versions and creates a project virtual environment during the Render build. Build and start use the same interpreter, preventing binary mismatches between NumPy and Python.
 
 1. Push the project to GitHub.
 2. In Render, choose **New +** -> **Blueprint**.
