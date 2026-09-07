@@ -2,7 +2,7 @@ services:
   - type: web
     name: energy-anomaly-monitor
     runtime: python
-    buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn --bind 0.0.0.0:$PORT --workers 1 --threads 4 --timeout 180 app:app
+    buildCommand: python -m pip install -r requirements.txt
+    startCommand: python -m gunicorn --bind 0.0.0.0:$PORT --workers 1 --threads 4 --timeout 180 app:app
     healthCheckPath: /api/health
     autoDeploy: true

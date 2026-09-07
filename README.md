@@ -43,7 +43,7 @@ pip install -r requirements.txt
 
 ## Deploy to Render
 
-This repository includes `render.yaml` and a production Gunicorn start command.
+This repository includes `render.yaml` and a production Gunicorn start command using the active Python interpreter.
 
 1. Push the project to GitHub.
 2. In Render, choose **New +** -> **Blueprint**.
