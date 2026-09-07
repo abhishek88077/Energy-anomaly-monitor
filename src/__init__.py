@@ -1,0 +1,1 @@
+"""Energy outlier detection project."""
