@@ -7,3 +7,4 @@ results/*
 !results/.gitkeep
 *.log
 .env
+.render_packages/
